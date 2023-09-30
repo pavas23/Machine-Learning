@@ -205,7 +205,7 @@ $$
 
 *   Least Squares Classification is a very important technique used to solve binary classification problems. It directly assigns values 0 or 1 based on linear combination of input features.
 
-The W matrix mentioned above can be written in the below form
+* The W matrix mentioned above can be written in the below form
 
 $$
 W = \begin{bmatrix}
@@ -218,7 +218,11 @@ W = \begin{bmatrix}
 $$
 
 *   We now determine the parameter matrix W by minimizing a sum-of-squares error function
-*   Consider a training set {$x_n$, $t_n$} n=1,2,....,N
+*   Consider a training set
+     {
+    $x_n$
+     , $t_n$}
+    n=1,2,....,N
 
 *   We define a matrix T whose nth row denotes $t_n^T$ vector together with a matrix X whose nth row denotes $x_n^T$
 
@@ -232,7 +236,7 @@ T = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-The X matrix can be written as
+* The X matrix can be written as
 
 $$
 X = \begin{bmatrix}
@@ -244,7 +248,7 @@ X = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-The sum of squares error function:
+* The sum of squares error function:
 
 $$
 \begin{equation}
