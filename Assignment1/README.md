@@ -1,5 +1,7 @@
 # Linear Models For Regression And Classification
 
+In this assignment, we had to generate a synthetic dataset using a synthesizer,  implement the machine learning algorithms given below from scracth in Python, compare the performance of different machine learning models, and collect insights from our analysis by varying different parameters.
+
 ## ```Dataset```
 
 The Diabetes dataset given contains the following features. It is used to predict which patient is diabetic
@@ -15,6 +17,8 @@ based on the analysis of the patient’s history and key medical factors.
 likelihood depending on the subject's age and their diabetic family history.
 8. Age: To express the age
 9. Outcome: To express if the person is diabetic; 1 is Yes and 0 is No
+
+We implemented the following Machine Learning Algorithms as a part of the assignment
 
 ## ```Stochastic Gradient Descent and Batch Gradient Descent using Linear Regression```
 ### ```Gradient Descent Algorithm```
