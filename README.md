@@ -1,5 +1,3 @@
-# BITS-F464
+# Machine Learning
 
-3-1, Machine Learning course at BITS Pilani, Hyd Campus
-
-This repo contains various assignments completed as a part of the coursework.
+The assignments from the Foundations of Data Science (CS-F320) and Machine Learning (BITS-F464) courses, both taken in 3-1 at BITS Pilani, Hyderabad Campus, are included in this repository.
