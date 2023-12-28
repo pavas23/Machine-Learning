@@ -278,3 +278,19 @@ $$
 
 
 - We can see that points on scatter plot are around the vectors when we take projections of principal components for a standardized dataset, as here we have properly scaled dataset, unlike when we took projection on original dataset.
+
+<br>
+
+## Assignment 2-B : PCA Analysis and Determining Optimal Number of Components
+
+The objective of this assignment is to conduct Principal Component Analysis (PCA) on the 'Hitters.csv' dataset, determine the optimal number of components for efficient prediction using Mean Squared Error (MSE) or Root Mean Squared Error (RMSE), and test the most efficient model.
+
+<p align="center">
+<img width="596" alt="fods_2b" src="https://github.com/pavas23/Machine-Learning/assets/97559428/3365a3e2-9b40-44d0-890d-1aa65b7cc155">
+</p>
+
+- Initially, as the number of ```components increases```, the ```RMSE decreases```. This is because a higher number of components capture more variance in the data, allowing the model to predict the underlying patterns better.
+
+- We see that ```minimum rmse is captured when we take 4 principal components```. The model captures enough information from the data without overfitting to the noise.
+
+- Beyond 4 number of components, we see that adding more components does not improve the performance. In fact, it ```leads to overfitting```, where the model starts ```capturing noise```in the data rather than genuine patterns.
