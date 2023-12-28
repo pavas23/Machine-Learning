@@ -189,4 +189,137 @@ $$
 m = 0.5*(m_1 - m_2)^TS^{-1}(m_1+m_2)
 $$
 
+<p align="center">
+  <img src="https://github.com/pavas23/Machine-Learning/assets/97559428/48152caf-9f07-40f8-bc6e-4a45f0a41306" alt="Fisher Linear Discriminant Analysis Result">
+  <br>
+  <em>Fisher Linear Discriminant Analysis Result</em>
+</p>
 
+<br>
+
+## ```Multilayer Perceptron```
+
+- Multilayer Perceptron is a type of Artificial Neural Networks (ANN), which is listed under supervised learning algorithms.
+
+
+- It is basically a feed-forward neural network algorithm.
+
+
+- It is called Multilayer Perceptron as there are multiple hidden layers between the input and the output values, which helps the model understand the complex mappings between the inputs and outputs.
+
+
+- The overall structure of the Multilayer Perceptron is as follows:
+    1. Input Layer: The input layer contains nodes(neurons), each of which corresponds to each feature of the input data. The number of nodes(neurons) in the input layer denotes the dimensionality of the input data.
+    2. Hidden Layer(s): Data from input layer is passed through the hidden layers, which makes the neural network to understand the complex inferences from the given input dataset.
+    3. Output Layer: The output layer helps produce the the network's predictions.
+    4. Loss Function: The difference between the observed values and the expected values is called the loss, which is computed by the loss function. The main aim of during training is to minimize the loss as much as possible.
+    
+    
+    
+- The Multilayer Perceptron works as follows:
+    1. Initialize weights and biases: Initializing weights and biases with random values
+    2. Forward Propagation: In this step, data moves sequentially from the input layer, through the hidden layers, and reaches the output layer, with the weights that are assigned to each link (connecting nodes) are adjusted while training.
+    3. Backward Propagation: During the feed-forward process, the errors are computed by calculating the differences between the expected and the observed values. The backpropagation process starts by propagating the error backward through the network. Main aim of this step is to observe the contribution of each weight to overall error.
+    4. Continue doing until the end of epochs is reached.
+
+
+<br>
+
+## ```K Nearest Neighbors```
+
+- KNN Algorithm compares a point in test dataset with the values in the given training dataset and based on its closeness or similarities in given range of K neighbors it assigns the point to the majority class.
+
+- It is called a lazy learner algorithm because it does not learn from the training set immediately instead it stores the dataset and at the time of classification, it performs an action on the dataset.
+
+- We have different metrics that can be used to calculate distance
+
+
+- ```Minkowski Distance```
+    
+    The Minkowski distance is a generalization of several distance metrics, including the Euclidean distance and the Manhattan distance. It is a way to measure the distance between two points in a multi-dimensional space.
+    
+$$
+d(p,q) = ({\sum_{i=1}^n{|q_i - p_i|^p}})^{\frac{1}{p}}
+$$
+
+- ```Euclidean Distance```
+
+    The Euclidean distance, also known as the L2 distance, is a common distance metric used to measure the straight-line distance between two points in a multi-dimensional space.
+$$
+d(p,q) = \sqrt{\sum_{i=1}^n{(q_i - p_i)^2}}
+$$
+
+- ```Manhattan Distance```
+    
+    The Manhattan distance, also known as the L1 distance or taxicab distance, is a distance metric used to measure the distance between two points in a multi-dimensional space by summing the absolute differences of their coordinates. 
+    
+$$
+d(p,q) = \sum_{i=1}^n{|q_i - p_i|}
+$$
+
+- ```Chebyshev Distance```
+    
+    The Chebyshev distance, also known as the chessboard distance, is a distance metric used to measure the maximum absolute difference between the coordinates of two points in a multi-dimensional space.
+    
+$$
+d(p,q) = max_{i}{|q_i - p_i|}
+$$
+
+- ```Cosine Distance```
+    
+    Cosine distance is a similarity metric commonly used to measure the cosine of the angle between two non-zero vectors in a multi-dimensional space. It quantifies the similarity between the two vectors by examining the cosine of the angle formed by the vectors' representations.
+    
+$$
+d(p,q) = 1 - \frac{\mathbf{p} \cdot \mathbf{q}}{\|\mathbf{p}\| \|\mathbf{q}\|}
+$$
+
+## ```Comparison of insights drawn from the models```
+
+- After performing the chi-squared test on all the categorical features, we see that the p-values for all our categorical features range from 0 to 195.48. According to the chi-squared test, we rejected the features which did not have much of an effect on our target attribute, i.e., Customer Classification.
+
+- We have also used the ANOVA test to find out the numerical features which affect the target attribute, i.e., Customer Classification.
+
+- Therefore the number of categorical features which affect the target attribute are given below
+
+
+```python
+  Index(['Duration in Month', 'Age in years', 'Present residence since',
+       'Number of existing credits at this bank', 'Customer Classification',
+       'Checking Account_A14', 'Credit History_A34',
+       'Personal status and sex_A93', 'Present employment since_A75',
+       'Purpose_A43', 'Present employment since_A74', 'Purpose_A41',
+       'Other installment plans_A143', 'Property_A121', 'Checking Account_A11',
+       'Property_A123', 'Savings Account/Bonds_A65', 'Housing_A152',
+       'Savings Account/Bonds_A63', 'Savings Account/Bonds_A64', 'Job_A172',
+       'Personal status and sex_A94', 'Telephone_A192', 'Job_A173',
+       'Checking Account_A13', 'Job_A174', 'Present employment since_A73',
+       'Purpose_A49', 'Other debtors / guarantors_A101',
+       'Other debtors / guarantors_A103', 'Credit History_A32',
+       'Credit History_A33', 'Housing_A151', 'Property_A122', 'Purpose_A42',
+       'Savings Account/Bonds_A62', 'Purpose_A48', 'Housing_A153',
+       'Checking Account_A12'],
+      dtype='object')
+```
+
+
+  - We see that the p-values of 'Duration in Month', 'Age in years', 'Present residence since','Number of existing credits at this bank', 'Customer Classification','Checking Account_A14', 'Credit History_A34' are higher. Hence their impact on assessing the credit on economic stability is higher
+ 
+```python
+{
+    "Present residence since": 29.976250818691852,
+    "Number of existing credits at this bank": 25.756499112950923,
+    "Age in years": 11.886909705995478,
+    "Duration in Month": 4.693614687806769,
+    "Installment rate in percentage of disposable income": 1.6838002436053603,
+    "Credit Amount": 1.0817072208587106,
+    "Number of people being liable to provide maintenance for": 0.0
+}
+```
+
+- We can see that the f-scores of "Present Residence since", and "Number of existing credits at this bank" are very high compared to the other features. Hence these features influence in assessing the impact of credit data on economic stability.
+
+	Name	Test Accuracy	Precision	Recall	AUC
+1	Fishers Linear Discriminant	80.000000	0.827586	0.914286	0.707143
+3	KNN	80.000000	0.833333	0.904762	0.714881
+2	Multilayer Perceptron	75.862069	0.836538	0.828571	0.701786
+0	Random Forest	74.482759	0.854167	0.780952	0.715476
