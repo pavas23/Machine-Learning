@@ -199,7 +199,7 @@ $$
 
 ## ```Multilayer Perceptron```
 
-- Multilayer Perceptron is a type of Artificial Neural Networks (ANN), which is listed under supervised learning algorithms.
+- Multilayer Perceptron is a type of ```Artificial Neural Networks (ANN)```, which is listed under supervised learning algorithms.
 
 
 - It is basically a feed-forward neural network algorithm.
@@ -209,19 +209,35 @@ $$
 
 
 - The overall structure of the Multilayer Perceptron is as follows:
-    1. Input Layer: The input layer contains nodes(neurons), each of which corresponds to each feature of the input data. The number of nodes(neurons) in the input layer denotes the dimensionality of the input data.
+    1. Input Layer: The input layer contains ```nodes(neurons)```, each of which corresponds to each feature of the input data. The number of nodes(neurons) in the input layer denotes the dimensionality of the input data.
     2. Hidden Layer(s): Data from input layer is passed through the hidden layers, which makes the neural network to understand the complex inferences from the given input dataset.
     3. Output Layer: The output layer helps produce the the network's predictions.
-    4. Loss Function: The difference between the observed values and the expected values is called the loss, which is computed by the loss function. The main aim of during training is to minimize the loss as much as possible.
-    
+    4. Loss Function: The difference between the observed values and the expected values is called the loss, which is computed by the loss function. The main aim of during training is to ```minimize the loss as much as possible```.
     
     
 - The Multilayer Perceptron works as follows:
     1. Initialize weights and biases: Initializing weights and biases with random values
     2. Forward Propagation: In this step, data moves sequentially from the input layer, through the hidden layers, and reaches the output layer, with the weights that are assigned to each link (connecting nodes) are adjusted while training.
-    3. Backward Propagation: During the feed-forward process, the errors are computed by calculating the differences between the expected and the observed values. The backpropagation process starts by propagating the error backward through the network. Main aim of this step is to observe the contribution of each weight to overall error.
+    3. Backward Propagation: During the feed-forward process, the errors are computed by calculating the differences between the expected and the observed values. The ```backpropagation process starts by propagating the error backward through the network```. Main aim of this step is to observe the contribution of each weight to overall error.
     4. Continue doing until the end of epochs is reached.
 
+Hidden layer(s): 
+For each layer, the activations and outputs are calculated as: 
+
+$$
+L_{j}^{l} = \sum_{i} w_{j,i}^{l} x_{i}^{l} = w_{j,0}^{l} x_{0}^{l} + w_{j,1}^{l} x_{1}^{l} + w_{j,2}^{l} x_{2}^{l} + \ldots + w_{j,n}^{l} x_{n}^{l}
+$$
+
+$$
+Y_{j}^{l} = g^{l}(L_{j}^{l})\\
+\{ y_i, x_{i1}, \ldots, x_{ip} \}_{i=1}^{n}
+$$
+
+- $x_{i}^{l}$ denotes the $i^{th}$ input to layer $l$ coming from the $l^{th}$ layer,
+- $y_{j}^{l}$ represents the output of the $j^{th}$ neuron in layer $l$,
+- $w_{j,i}^{l}$ signifies the weight of the connection between the $i^{th}$ neuron in layer $l$ and the $j^{th}$ neuron in the same layer $l$,
+- $L_{j}^{l}$ represents the net activation of the $j^{th}$ neuron in layer $l$,
+- $g^{l}(\cdot)$ stands for the activation function of layer $l$.
 
 <br>
 
