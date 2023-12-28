@@ -47,9 +47,11 @@ $$
 H(X) = - \sum_{j} p_{j} log_{2}(p_{j})
 $$
 
+$$
 \begin{equation}
 \text{where} \space {p_{j} \space \text{is the probability of class j}}
 \end{equation}
+$$
 
 For two class problem, it takes the following form
 
@@ -162,12 +164,14 @@ $$
 
 
 - Update all the weights as follows:
+  
 $$
 w_{i}^{(m+1)} = w_{i}^{(m)}.e^{-\alpha_myK_m(x)} 
 $$
 
 
-4. New predictions can be computed by 
+4. New predictions can be computed by
+   
 $$
 K(x) = sign[\sum_{m=1}^{M}\alpha_{m}.K_{m}(x)]
 $$
@@ -175,5 +179,117 @@ $$
 - Low error means the $\alpha$ value is larger, and thus has higher importance in voting.
 
 - AdaBoost predicts on -1 or 1. As long as the weighted sum is above 0, it predicts 1, else, it predicts -1.
+
+<br/>
+
+## ```Multiclass SVM```
+
+- Aim is to find optimal hyperplane for data points that maximizes the margin.
+
+
+- We will get output as set of weights, one for each feature, whose linear combination predicts the value of target attribute.
+
+
+- To maximize the margin, we reduce the number of weights that are non-zero to a few.
+
+<br>
+
+<div align="center">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/SVM_margin.png/300px-SVM_margin.png">
+</div>
+
+<br>
+
+- We solve the following constraint optimization problem
+
+$$
+\max_{w, b} \frac{2}{\|w\|} \space\space\space \text{such that} \space\space\space \forall i: y_i (w \cdot x_i + b) \geq 1
+$$
+
+- which can be written as, 
+
+$$
+\min_{w, b} \frac{\|w\|^{2}}{2} \space\space\space \text{such that} \space\space\space \forall i: y_i (w \cdot x_i + b) \geq 1
+$$
+
+- Corresponding Lagrangian is
+
+$$
+\mathcal{L}(w, b, \alpha_{i}) = \frac{1}{2} \|w\|^2 - \sum_{i=1}^{N} \alpha_i [y_i (w \cdot x_i + b) - 1 ]
+\space\space\space \forall i: \alpha_i \geq 0
+$$
+
+- The above indicates primal form of optimization problem, for which we can write equivalent Lagrangian Dual Problem
+
+
+$$
+\max_{\alpha} \left[ \sum_{i=1}^{N} \alpha_i - \frac{1}{2} \sum_{i=1}^{N} \sum_{j=1}^{N} \alpha_i \alpha_j y_i y_j (x_i \cdot x_j) \right]
+\space\space\space \text{such that} \space\space \forall i: \alpha_i \geq 0 \space \text{and} \space \sum_{i=1}^{N} \alpha_i y_i = 0
+$$
+
+
+- The dual optimization problem for the SVM is a quadratic programming problem. The solution to this quadratic programming problem yields the Lagrange multipliers for each point in the dataset.
+
+
+- The weight vector is given by
+
+$$
+w = \sum_{i=1}^{N} \alpha_i y_i x_i
+$$
+
+- And bias term is
+
+$$
+b = y_i - \sum_{j=1}^{N} \alpha_j y_j (x_j \cdot x_i)
+$$
+
+- Only points with α > 0 define the hyperplane (contribute to the sum). These are called support vectors.
+
+
+$$
+y = \text{sign}\left(\sum_{i \in \text{SV}} \alpha_i y_i (x_i \cdot x) + b\right)
+$$
+
+- Here, α are the Lagrange multipliers, y are the class labels of the support vectors, x are the support vectors, x is the new example, and b is the bias term.
+
+<br>
+
+## ```Kernel Transformation```
+
+- When the decision boundary between classes is not linear in the input feature space, we use non-linear Support Vector Machines (SVM) in which we use Kernel functions to map non-linear model in input space to a linear model in higher dimensional feature space.
+
+
+- The kernel trick allows the SVM to operate in this higher-dimensional space without explicitly computing the transformation.
+
+
+- The general form of the decision function in a non-linear SVM is
+
+
+$$
+y = \text{sign}\left(\sum_{i \in \text{SV}}^{N} \alpha_i y_i K(x_i, x) + b\right)
+$$
+
+- We will use the following Kernel functions
+
+
+  - Linear Kernel
+
+$$
+K(x_i, x_j) = x_i \cdot x_j
+$$
+
+  - Polynomial Kernel
+   
+$$
+K(x_i, x_j) = (1 + x_i \cdot x_j)^p
+$$
+
+  - Radial Basis Function (RBF) or Gaussian Kernel
+    
+$$
+K(x_i, x_j) = \exp\left(-\frac{1}{2\sigma^2} \|x_i - x_j\|^2\right)
+$$
+
+
 
 
