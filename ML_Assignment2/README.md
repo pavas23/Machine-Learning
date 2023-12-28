@@ -272,24 +272,30 @@ $$
 - We will use the following Kernel functions
 
 
-  - Linear Kernel
+- Linear Kernel
 
 $$
 K(x_i, x_j) = x_i \cdot x_j
 $$
 
-  - Polynomial Kernel
+- Polynomial Kernel
    
 $$
 K(x_i, x_j) = (1 + x_i \cdot x_j)^p
 $$
 
-  - Radial Basis Function (RBF) or Gaussian Kernel
+- Radial Basis Function (RBF) or Gaussian Kernel
     
 $$
 K(x_i, x_j) = \exp\left(-\frac{1}{2\sigma^2} \|x_i - x_j\|^2\right)
 $$
 
+## ```Comparison of insights drawn from the models```
 
+| Name |	Test Accuracy |	Precision	| Recall |
+| ------------- | ------------- | --- | --- |
+| SVM |	60.301508 |	0.598199 |	0.603015 |
+| Decision Tree | 	58.040201 | 0.627750 |	0.580402 |
+| Adaboost | 	52.512563 | 	0.686176 |	0.525126 |
 
 
