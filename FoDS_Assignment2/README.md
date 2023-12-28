@@ -59,7 +59,7 @@ cos\theta = \frac{OA}{OB}
 $$
 
 $$
-\bar{u} cdot \bar{x_n} = (||u||)(||x||)cos\theta
+\bar{u} \cdot \bar{x_n} = (||u||)(||x||)cos\theta
                      = (||u||)(OB)cos\theta = (||u||)(OA)
 $$
 
@@ -263,3 +263,18 @@ u_{11}x_{11} + u_{12}x_{12}+... + u_{1d}x_{1d}
 $$
 
 - Transformation of a point from multidimensional space (d-dimensional in this case) to a uni-dimensional space is a linear transformation (where multiples are componenents of eigen vectors in PCA)
+
+<br>
+
+## ```Conclusion and Interpretation```
+
+- We can see that maximum variance is captured by first two principal components, which helps us in reducing dimension of dataset from 5 features to 2 features while retaining most of the information.
+
+
+- PCA is a dimensionality reduction technique, and dimensionality reduction is the process of reducing the number of features in a dataset while retaining as much information as possible. This can be done to reduce the complexity of a model, improve the performance of a learning algorithm, or make it easier to visualize the data.
+
+
+- PCA converts a set of correlated features in the high dimensional space into a series of uncorrelated features in the low dimensional space. These uncorrelated features are also called principal components.
+
+
+- We can see that points on scatter plot are around the vectors when we take projections of principal components for a standardized dataset, as here we have properly scaled dataset, unlike when we took projection on original dataset.
