@@ -292,10 +292,13 @@ $$
 
 ## ```Comparison of insights drawn from the models```
 
+
+<div align="center">
+  
 | Name |	Test Accuracy |	Precision	| Recall |
 | ------------- | ------------- | --- | --- |
 | SVM |	60.301508 |	0.598199 |	0.603015 |
 | Decision Tree | 	58.040201 | 0.627750 |	0.580402 |
 | Adaboost | 	52.512563 | 	0.686176 |	0.525126 |
 
-
+</div>
