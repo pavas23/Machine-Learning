@@ -245,6 +245,7 @@ $$
 - ```Euclidean Distance```
 
     The Euclidean distance, also known as the L2 distance, is a common distance metric used to measure the straight-line distance between two points in a multi-dimensional space.
+  
 $$
 d(p,q) = \sqrt{\sum_{i=1}^n{(q_i - p_i)^2}}
 $$
@@ -272,6 +273,8 @@ $$
 $$
 d(p,q) = 1 - \frac{\mathbf{p} \cdot \mathbf{q}}{\|\mathbf{p}\| \|\mathbf{q}\|}
 $$
+
+<br>
 
 ## ```Comparison of insights drawn from the models```
 
@@ -303,6 +306,7 @@ $$
 
 
   - We see that the p-values of 'Duration in Month', 'Age in years', 'Present residence since','Number of existing credits at this bank', 'Customer Classification','Checking Account_A14', 'Credit History_A34' are higher. Hence their impact on assessing the credit on economic stability is higher
+
  
 ```python
 {
@@ -316,10 +320,18 @@ $$
 }
 ```
 
+
 - We can see that the f-scores of "Present Residence since", and "Number of existing credits at this bank" are very high compared to the other features. Hence these features influence in assessing the impact of credit data on economic stability.
 
-	Name	Test Accuracy	Precision	Recall	AUC
-1	Fishers Linear Discriminant	80.000000	0.827586	0.914286	0.707143
-3	KNN	80.000000	0.833333	0.904762	0.714881
-2	Multilayer Perceptron	75.862069	0.836538	0.828571	0.701786
-0	Random Forest	74.482759	0.854167	0.780952	0.715476
+<br>
+
+<div align="center">
+
+| Name | Test Accuracy | Precision | Recall | AUC |
+| ------------- | ------------- | --- | --- | --- |
+| Fishers Linear Discriminant |	80.000000 | 0.827586 | 0.914286 | 0.707143 |
+| KNN | 80.000000 | 0.833333 | 0.904762 | 0.714881 |
+| Multilayer Perceptron	 | 75.862069 | 0.836538 | 0.828571 | 0.701786 |
+| Random Forest	| 74.482759 | 0.854167 | 0.780952 | 0.715476 |
+
+</div>
